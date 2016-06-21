@@ -1,0 +1,28 @@
+.bg{
+	background-image: url(../img/baiduyunpan.png);
+	background-repeat: no-repeat;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.line16{
+	width: 1px;
+	height: 16px;
+	background: #393939;
+}
+.sanjiao-top{
+	width: 11px;
+	height: 8px;
+	background-position:-250px 0px;
+}
+li{
+	cursor: pointer;
+}

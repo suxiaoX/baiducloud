@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度云网盘 | 登陆</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/pubulic.css">
+	<link rel="stylesheet" type="text/css" href="css/load.css">
+	<link rel="Shortcut Icon" href="./img/favicon.ico"  type="image/x-icon" />
+</head>
+<body>
+<section id="content">
+	<div class="load-item">
+		<ul class="clearfix img-box">
+		</ul>
+		<ul class="img-list"></ul>
+	</div>
+	<div class="load-form">
+		<form>
+			<fieldset>
+				<legend>登陆框</legend>
+				<div class="name">
+					<label for="username">用户名:</label>
+					<input type="text" id="username" autofocus="autofocus" placeholder="请输入用户名" />
+					<span>✔</span>
+				</div>
+				<div class="password">
+					<label for="password">密码:</label>
+					<input type="password" id="password" />
+				</div>
+				<div class="password-sure">
+					<label for="password2">确认密码:</label>
+					<input type="password" id="password2" />
+					<span>✔</span>
+				</div>
+				<div class="auto-load">
+					<span></span>
+					<input type="checkbox" id="auto-load" />
+					<label for="auto-load">记住用户名和密码</label>
+				</div>
+				<a href="javascript:;" class="load">登陆</a>
+			</fieldset>
+			<div class="login">
+				<span>没有百度账号？</span>
+				<input type="button" value="立即注册百度账号" />
+				<input type="button" value="返回登陆">
+			</div>
+		</form>
+		<div class="login-ok">注册成功</div>
+	</div>
+	<div class="default">
+		<p>初始用户名：suxiao</p>
+		<p>初始密码：baidu1234</p>
+	</div>
+	<div class="ps">
+		<strong>登录界面主要功能：全部采用JQ框架实现</strong>
+		<p>--创建一个轮播图的组件，调用组件，生成轮播背景。</p>
+		<p>--输入初始用户名和密码，点击登陆即可跳转至百度云网盘界面。</p>
+		<p>--可注册，注册后，可以用你注册后的用户名和密码登陆，且用正则匹配注册用户名条件，密码条件，不能用已经存在的用户名注册，密码安全提示。完全匹配才能注册成功，提示是否可以注册，密码是否相同。用户进入注册页面，轮播图会停止，以免影响用户视觉体验。点击查看第几张图片，轮播又开始。</p>
+		<p>--保存用户名和密码，如果点击了保存此按钮进行登陆，下次进入页面，会自动生成上次成功登陆的用户名和密码，点击登陆即可直接登陆！</p>
+		<p><strong>主要用到的知识点：</strong>本地存储localStorage，正则匹配，定时器，if判断(逻辑较复杂)，模拟后台对接，JQ组件方法等。</p>
+	</div>
+	<span id="close-ps">收起</span>
+</section>
+<script type="text/javascript" src="./js/userdata.js"></script>
+<script type="text/javascript" src="./js/tools.js"></script>
+<script type="text/javascript" src="./js/jquery2.2.2-min.js"></script>
+<script type="text/javascript" src="./js/load.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(window).resize = function(){
+			iWidth = $(window).width();
+			iHeight = $(window).height();
+		};
+		var $loadItem = $(".load-item");
+		var $imgBox = $(".img-box");
+		var $imgList = $(".img-list");
+		$loadItem.orderPlay({},$imgBox,$imgList);//调用封装的组件，生成轮播背景
+	})
+</script>
+</body>
+</html>
